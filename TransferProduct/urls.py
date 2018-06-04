@@ -13,13 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+
 from django.conf import settings
 from django.conf.urls import url ,include
 from django.contrib import admin
 from rest_framework.authtoken import views
+from TransferProductApp import views
+
+""" importados de mas """
+
+"""" end importados de mas """
 
 
 urlpatterns = [
+
+  
     url(r'^api/',include(('TransferProductApp.urls','TransferProductApp'),namespace='TransferProductApp')),
     url(r'^admin/', admin.site.urls),    
 ]

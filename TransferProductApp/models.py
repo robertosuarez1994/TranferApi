@@ -21,8 +21,17 @@ class Stock (models.Model):
     stock = models.IntegerField(null=True)
 
     def __str__(self):
-        s = str(self.product.name)+'_'+self.branchOffice.name;
+        s = str(self.product.name)+'_'+self.branchOffice.name
         return(s)
+
+    def Transfer(self):
+        print("hola")
+        return True
+
+
+        
+        
+
 
     
 

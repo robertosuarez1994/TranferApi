@@ -1,6 +1,7 @@
 from .models import *
 from rest_framework import serializers
 
+
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Product
@@ -19,3 +20,6 @@ class StockSerializer(serializers.ModelSerializer):
         fields = ('id','product','branchOffice','stock')
         depth = 1
 
+class TransferSerializer(serializers.Serializer):
+    class Meta:
+     fields = ['branchFrom_id','branchTo_id','product_id','stock']
